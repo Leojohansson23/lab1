@@ -1,6 +1,8 @@
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.awt.*;
+
 public class Saab95Test extends TestCase {
 
     @Test
@@ -9,6 +11,17 @@ public class Saab95Test extends TestCase {
         test.startEngine();
         test.gas(1.0);
         assertEquals(1.35,test.getCurrentSpeed());
+    }
+
+    public void testmove(){
+        Saab95 test = new Saab95();
+        test.startEngine();
+        test.move();
+        test.move();
+        test.turnright();
+        test.move();
+        //assertEquals(3, test.getYpos());
+        assertEquals(0.1,test.getXpos());
     }
 
     @Test
@@ -31,5 +44,26 @@ public class Saab95Test extends TestCase {
     public void testmodelname(){
         Saab95 test = new Saab95();
         assertEquals("src.Saab95", test.modelName);
+
+
+
+    }
+
+
+    @Test
+    public void testdoors(){
+        Saab95 test = new Saab95();
+        assertEquals(2,test.getNrDoors());
+    }
+
+    public void testcolor(){
+        Saab95 testcar = new Saab95();
+        Color expectedcolor = new Color(255,0,0);
+        assertEquals(expectedcolor,testcar.getColor());
+
+
+
+
+
     }
 }

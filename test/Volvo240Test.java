@@ -31,4 +31,11 @@ public class Volvo240Test extends TestCase {
         assertEquals(0.1,test.getXpos());
     }
 
+    public  void testcolor(){
+        Volvo240 testcar = new Volvo240();
+
+
+
+    }
+
 }
