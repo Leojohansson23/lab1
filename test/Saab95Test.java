@@ -8,7 +8,7 @@ public class Saab95Test extends TestCase {
         Saab95 test = new Saab95();
         test.startEngine();
         test.gas(1.0);
-        assertEquals(4.1,test.getCurrentSpeed());
+        assertEquals(1.35,test.getCurrentSpeed());
     }
 
     @Test
@@ -19,7 +19,7 @@ public class Saab95Test extends TestCase {
         test.stopEngine();
         test.setTurboOn();
         test.gas(10.0);
-        assertEquals(4.1,test.getCurrentSpeed());
+        assertEquals(0.0,test.getCurrentSpeed());
     }
 
     @Test

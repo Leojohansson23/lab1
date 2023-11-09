@@ -1,7 +1,7 @@
 import java.awt.*;
 public class  Car implements Moveable {
 
-        public int Dir = 90;
+        public int Direction = 90;
         public double Xpos = 0;
         public double Ypos = 0;
         public int nrDoors; // Number of doors on the car
@@ -41,7 +41,6 @@ public class  Car implements Moveable {
         public boolean hasTurbo;
         public boolean getHasTurbo(){return hasTurbo;}
 
-
     public void setTurboOn(){
         turboOn = true;
     }
@@ -78,7 +77,7 @@ public class  Car implements Moveable {
 
     @Override
     public void move() {
-        int value = (Dir % 360);
+        int value = (Direction % 360);
         value = value / 90;
         switch (value){
             case 0:
@@ -99,16 +98,16 @@ public class  Car implements Moveable {
 
     @Override
     public void turnleft() {
-            Dir += 90;
-            Dir = Dir % 360;
+            Direction += 90;
+            Direction = Direction % 360;
 
     }
 
     @Override
     public void turnright() {
-            Dir -= 90;
-            Dir += 360;
-            Dir = Dir % 360;
+            Direction -= 90;
+            Direction += 360;
+            Direction = Direction % 360;
 
     }
 
