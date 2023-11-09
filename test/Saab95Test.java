@@ -24,6 +24,8 @@ public class Saab95Test extends TestCase {
         assertEquals(0.1,test.getXpos());
     }
 
+
+
     @Test
     public void testspeedturbo(){
         Saab95 test = new Saab95();
@@ -36,6 +38,15 @@ public class Saab95Test extends TestCase {
     }
 
     @Test
+    public void testspeedturbooff(){
+        Saab95 test = new Saab95();
+        test.startEngine();
+        test.setTurboOn();
+        test.gas(1.0);
+        assertEquals(1.725,test.getCurrentSpeed());
+    }
+
+    @Test
     public void testegetenginepower(){
         Saab95 test = new Saab95();
         assertEquals(125.0, test.getEnginePower());
@@ -43,7 +54,7 @@ public class Saab95Test extends TestCase {
     @Test
     public void testmodelname(){
         Saab95 test = new Saab95();
-        assertEquals("src.Saab95", test.modelName);
+        assertEquals("src.Saab95", test.getModelName());
 
 
 

@@ -1,22 +1,30 @@
 import java.awt.*;
 public class  Car implements Moveable {
 
-        public int Direction = 90;
-        public double Xpos = 0;
-        public double Ypos = 0;
-        public int nrDoors; // Number of doors on the car
-        public double enginePower; // Engine power of the car
-        public double currentSpeed; // The current speed of the car
-        public Color color; // Color of the car
-        public String modelName; // The car model name
-
+        private int Direction = 90;
+        private double Xpos = 0;
+        private double Ypos = 0;
+        private int nrDoors; // Number of doors on the car
+        private double enginePower; // Engine power of the car
+        private double currentSpeed; // The current speed of the car
+        private Color color; // Color of the car
+        private String modelName; // The car model name
         public Color getColor(){return color;}
-        private void setColor(Color clr){
+        public String getModelName(){return modelName;}
+        public void setColor(Color clr){
             color = clr;
         }
-        public int getNrDoors(){
-            return nrDoors;
+        public int setNrDoors(int doors){
+            return this.nrDoors = doors;
         }
+        public int getNrDoors(){return nrDoors;}
+        public double setEnginePower(double power){
+                return this.enginePower = power;
+        }
+
+        public String setmodelname(String name){return this.modelName = name;}
+
+
         public double getEnginePower(){
             return enginePower;
         }
@@ -35,19 +43,11 @@ public class  Car implements Moveable {
 
         public double getXpos(){return Xpos;}
         public double getYpos(){return Ypos;}
-        public double trimFactor;
+        private double trimFactor;
+        public double setTrimFactor(double trim){return this.trimFactor = trim;}
         public double getTrimFactor(){return trimFactor;}
 
-        public boolean hasTurbo;
-        public boolean getHasTurbo(){return hasTurbo;}
 
-    public void setTurboOn(){
-        turboOn = true;
-    }
-
-    public void setTurboOff(){
-        turboOn = false;
-    }
 
     public double speedFactor(){
         return enginePower * 0.01;

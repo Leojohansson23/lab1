@@ -3,21 +3,17 @@ import java.awt.*;
 public class Volvo240 extends Car{
 
     public Volvo240(){
-        nrDoors = 4;
-        color = Color.black;
-        enginePower = 100;
-        modelName = "src.Volvo240";
+        setNrDoors(4);
+        setColor(Color.black);
+        setEnginePower(100);
+        setmodelname("src.Volvo240");
         stopEngine();
-        trimFactor = 1.25;
-        hasTurbo = false;
+        setTrimFactor(1.25);
     }
 
     @Override
     public double speedFactor() {
-        if(trimFactor > 1.0) {
-            return enginePower * 0.01 * trimFactor;
-        }
-        return enginePower * 0.01;
+        return getEnginePower() * 0.01 * getTrimFactor();
     }
 
 }
